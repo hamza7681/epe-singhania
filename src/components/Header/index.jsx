@@ -9,7 +9,6 @@ import { BsChevronDown } from "react-icons/bs";
 const Sidebar = ({ children }) => {
   const [toggle, setToggle] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  const sidebarToggle = () => setIsOpen(!isOpen);
   const { pathname } = useLocation();
   const menuItem = [
     {
@@ -27,7 +26,7 @@ const Sidebar = ({ children }) => {
     <div className="flex">
       <div className="flex">
         <div
-          className={`bg-[#FAFAFA] border-r-[1px] border-r-gray-200 pt-16 lg:px-4 px-0 lg:relative absolute text-white h-screen transition-all duration-300  ${
+          className={`bg-[#FAFAFA] z-[1] border-r-[1px] border-r-gray-200 pt-16  px-0 lg:relative absolute text-white h-screen transition-all duration-300  ${
             isOpen ? "w-[300px] lg:w-[240px] px-4" : "lg:w-[50px] w-0 lg:px-2 "
           } `}
         >
@@ -61,10 +60,10 @@ const Sidebar = ({ children }) => {
             </Link>
           ))}
         </div>
-        <div className="bg-white px-5 border-b-[1px] border-b-gray-200  h-14 w-full absolute top-0 flex  justify-between items-center">
+        <div className="bg-white px-5 border-b-[1px] z-[2] border-b-gray-200  h-14 w-full absolute top-0 flex  justify-between items-center">
           <div className="flex gap-4 items-between">
             <FaBars
-              onClick={sidebarToggle}
+              onClick={() => setIsOpen(!isOpen)}
               className="text-[25px] text-[#FD5D3E]"
             />
             <h1 className="text-[#FD5D3E]">Dashboard</h1>

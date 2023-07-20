@@ -1,9 +1,8 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import "primereact/resources/themes/lara-light-indigo/theme.css";
-import "primereact/resources/primereact.min.css";
 import DashboardPage from "./pages/DashboardPage";
 import LoginPage from "./pages/LoginPage";
+import MerchantPage from "./pages/MerchantPage";
 
 function App() {
   return (
@@ -11,6 +10,7 @@ function App() {
       <Routes>
         <Route path="/" element={<LoginPage />} />
         <Route path="/dashboard" element={<DashboardPage />} />
+        <Route path="/merchants" element={<MerchantPage />} />
       </Routes>
     </>
   );
