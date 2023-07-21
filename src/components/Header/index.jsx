@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { FaBars } from "react-icons/fa";
 import { Link, useLocation } from "react-router-dom";
-import { GoHome } from "react-icons/go";
-import { BiUser } from "react-icons/bi";
+import { GoHome , GoVerified } from "react-icons/go";
+import { BiUser, BiSolidUserPlus } from "react-icons/bi";
 import pic from "../../assets/user.png";
 import { BsChevronDown } from "react-icons/bs";
-
+import {MdOutlinePayments} from "react-icons/md";
+import {PiHandshakeDuotone} from "react-icons/pi"
 const Sidebar = ({ children }) => {
   const [toggle, setToggle] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -20,6 +21,26 @@ const Sidebar = ({ children }) => {
       path: "/merchants",
       name: "Merchant",
       icon: <BiUser />,
+    },
+    {
+      path: "/investor",
+      name: "Investor",
+      icon: <BiSolidUserPlus/>
+    },
+    {
+      path: "/verification",
+      name: "KYC",
+      icon: <GoVerified/>
+    },
+    {
+      path: "/transaction",
+      name: "Transaction",
+      icon: <MdOutlinePayments/>
+    },
+    {
+      path: "/banksettelment",
+      name: "Bank Settelment",
+      icon: <PiHandshakeDuotone/>
     },
   ];
   return (
@@ -58,8 +79,12 @@ const Sidebar = ({ children }) => {
                 {item.name}
               </div>
             </Link>
+            
           ))}
+          
         </div>
+
+
         <div className="bg-white px-5 border-b-[1px] z-[2] border-b-gray-200  h-14 w-full absolute top-0 flex  justify-between items-center">
           <div className="flex gap-4 items-between">
             <FaBars

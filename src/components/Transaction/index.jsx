@@ -22,7 +22,7 @@ const columns = [
   { id: "delete", label: "Delete", minWidth: 50 },
 ];
 
-const Merchant = () => {
+const Transaction = () => {
   const [rows, setRows] = useState([
     { _id: 1, name: "Hamza", email: "hamzambf@gmail.com" },
     { _id: 2, name: "Hamza", email: "hamzambf@gmail.com" },
@@ -93,12 +93,12 @@ const Merchant = () => {
   return (
     <div className="w-full">
       <div className="bg-white py-1 flex justify-between items-center rounded-[7px] ">
-        <h1 className="text-[#FD5D3E] text-[26px]">Merchants</h1>
+        <h1 className="text-[#FD5D3E] text-[26px]">Transaction</h1>
       </div>
       <DeleteModal
         open={open2}
         handleClose={handleClose2}
-        heading="Do you want to delete this merchant?"
+        heading="Do you want to delete this transaction?"
         btn1="Cancel"
         deleteClick={deleteCategory}
         btn2="Delete"
@@ -115,7 +115,7 @@ const Merchant = () => {
         <Paper sx={{ width: "100%", overflow: "hidden" }}>
           {rows.length === 0 ? (
             <p className="bg-[white] pl-[10px] text-white">
-              No Merchants found!
+              No Transaction found!
             </p>
           ) : (
             <TableContainer sx={{ maxHeight: 440 }}>
@@ -206,4 +206,4 @@ const Merchant = () => {
   );
 };
 
-export default Merchant;
+export default Transaction;
